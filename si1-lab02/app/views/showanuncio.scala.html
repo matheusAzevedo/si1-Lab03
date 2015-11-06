@@ -1,0 +1,13 @@
+@(anuncio: Anuncio)
+@main("Lista de Anuncios"){
+
+
+      <div class="boxes" style="height:400px;">
+        <div class="insideBox">
+          <span style="font-size:20px; color: red;">@anuncio.getTitulo</span>
+          <p><span style="font-size:12px; color: #000;">@anuncio.getData</span>
+          <p><span style="font-size:12px;">@anuncio.getDescricao</span>
+        </div><!--insidebox-->
+      </div><!--boxes-->
+  </div><!--container-->  
+}

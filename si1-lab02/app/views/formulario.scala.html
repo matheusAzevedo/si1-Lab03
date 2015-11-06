@@ -1,0 +1,121 @@
+@(formAnuncio: Form[Anuncio])
+@import helper._
+ 
+@main("Cadastrar Anuncio") {
+  @helper.form(routes.Application.novoAnuncio) {
+
+        
+        <!--BEGIN #subscribe-inner -->
+        <div id="signup-inner">
+        
+        	<div class="clearfix" id="header">
+        	
+     
+        
+                <h1>Anúncio de contato</h1>
+
+            
+            </div>
+    
+    		<form id="send" action="">
+	
+	   	
+	   			<p>
+                <label>Título *</label>
+                <input name="titulo" type="text" class="form-control" required>
+                </p>
+	  			<p>
+                <label>Descrição do anúncio *</label>
+                <textarea name="descricao" cols="30" rows="10" class="form-control" required></textarea>
+
+                </p>
+
+                <p>
+               	<label>Forma que deseja tocar *</label><br>
+                   
+                   <div style="position: static; left: 0px;">
+	                   <input type="radio" name="tipo" value="banda" checked>Tocar em banda
+						<br>
+						<input type="radio" name="tipo" value="ocasionalmente">Tocar ocasionalmente
+
+						
+					</div>
+                    
+                </p>
+                <div id="instruments">
+                     
+                    <label>Quais instrumentos você toca? *</label>
+                    
+                    <input name="instrumento" type="text" class="form-control" required>
+                    <button onclick="addElement('instrumento', 'instruments')">Adicionar instrumento</button><br>
+                    
+                    
+                    
+                    
+                <p>
+                </div>
+                <div id="likeStyle">
+               
+                    <label>Quais os estilos musicais você gosta de tocar? *</label>
+                    
+                    <input name="estiloQueGosta" type="text" class="form-control" required>
+                    <button onclick="addElement('estiloQueGosta', likeStyle)">Adicionar outro estilo</button><br>
+                    
+                </p>
+
+                </div>
+
+                <div id="noLikeStyle">
+               
+                    <label>Quais os estilos musicais você NÃO gosta de tocar? *</label>
+                    
+                    <input name="estiloQueNaoGosta" type="text" class="form-control" required>
+                    <button onclick="addElement('estiloQueNaoGosta', 'noLikeStyle')">Adicionar outro estilo</button><br>
+                </p>
+                </div>
+
+                <label>Email *</label>
+                <input name="email" type="text" class="form-control" required>
+                </p>
+                
+                <p>
+                <label>Facebook</label>
+                <input name="facebook" value="http://" type="text">
+                </p>
+                
+                
+                
+                <p>
+                <label>Endereço</label>
+                <input name="endereco" type="text" class="form-control" required>
+                </p>
+
+	   			<script type="text/javascript">
+
+                	function addElement(name, id){
+                		//alert($( id ).text());
+      //           		var theDiv = document.getElementById(id);
+						// var content = document.createTextNode('<input name="'+name+'" type="text" class="form-control" required><br><br>');
+						// theDiv.appendChild(content);
+                		$( id ).append('<input name="'+name+'" type="text" class="form-control" required><br><br>');
+                     //document.getElementById(id).innerHTML += '<input name="'+name+'" type="text" class="form-control" required><br><br>';
+                }
+                        
+
+            	</script>
+	 
+	   
+    			<input type="submit" value="Criar">
+    		</form>
+    		<div id="required">
+				<p>* Obrigatório<br>
+				</p>
+			</div>
+
+
+        </div>
+        
+        <!--END #signup-inner -->
+    </div>
+  }
+}

@@ -1,0 +1,77 @@
+@(anuncios: List[Anuncio])
+ 
+@main("Lista de Anuncios"){
+  <div class="container">
+            
+               <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">Anuncios e Bandas</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+ 
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+             
+                        <h3>Anuncie aqui!</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+
+
+  @if(anuncios.isEmpty){
+        
+      <h2>oi</h2>
+  } else {
+
+        @for(anuncio <- anuncios){
+          
+          <div class="boxes">
+            <div class="insideBox">
+              <a style="font-size:20px; color: red;" href="@routes.Application.showAnuncio(anuncio.getTitulo)">@anuncio.getTitulo</a>
+              <p><span style="font-size:12px; color: #000;">@anuncio.getData</span>
+              <p><span style="font-size:12px;">@anuncio.getDescricao</span>
+            </div><!--insidebox-->
+          </div><!--boxes-->
+       }
+    
+  }
+    
+
+                            <li><br><br>
+                                <a href="@routes.Application.formularioNovoAnuncio" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Criar!</span></a>
+                            </li>
+ 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+  
+  </div><!--container-->  
+     
+}
